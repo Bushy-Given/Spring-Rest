@@ -1,17 +1,17 @@
 package org.rest.demo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
 @XmlRootElement
+@Entity  @Table(name="PERSON")
 public class Person {
     @Id  @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "PersonID")
     private Long id;
+    @Column(name = "FirstName")
     private String firstName;
+    @Column(name = "LastName")
     private String lastName;
 
     public Person(){}

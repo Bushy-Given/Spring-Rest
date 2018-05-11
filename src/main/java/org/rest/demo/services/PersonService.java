@@ -33,8 +33,8 @@ public class PersonService {
         return personRepository.save(person);
     }
 
-    public  Person updatePerson(Person p){
-        return personRepository.save(p);
+    public  Person updatePerson(Person person){
+        return personRepository.save(person);
     }
 
     public void deletePerson(Person person){
