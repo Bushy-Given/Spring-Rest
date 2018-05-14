@@ -20,7 +20,6 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-
     public Optional<Person> getPersonById(Long id){
         return personRepository.findById(id);
     }
@@ -44,5 +43,4 @@ public class PersonService {
     public void deleteAllPersons(){
         personRepository.deleteAll();
     }
-
 }

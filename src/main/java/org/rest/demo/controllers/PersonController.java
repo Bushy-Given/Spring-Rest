@@ -3,13 +3,14 @@ package org.rest.demo.controllers;
 import org.rest.demo.entities.Person;
 import org.rest.demo.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/")
 public class PersonController {
 
     private PersonService personService;
@@ -18,13 +19,16 @@ public class PersonController {
         this.personService = personService;
     }
 
+
     @GetMapping("persons")
+    @Cacheable("persons")
     @ResponseStatus(HttpStatus.OK)
     public Iterable<Person> persons(){
         return personService.getPersons();
     }
 
     @GetMapping("person/{id}")
+    @Cacheable("persons")
     public Optional<Person> person(@PathVariable Long id){
         return personService.getPersonById(id);
     }
