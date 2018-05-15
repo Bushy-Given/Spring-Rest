@@ -1,10 +1,14 @@
 package org.rest.demo.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @XmlRootElement
 @Entity  @Table(name="PERSON")
 public class Person {
